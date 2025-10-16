@@ -29,11 +29,11 @@ public class ControleVenda {
         
         try {
             concessionaria.realizarVenda(placa, cpfCliente, idVendedor, formaPagamento, desconto);
-            System.out.println("\nVenda realizada com sucesso!");
+            System.out.println("\n✅ Venda realizada com sucesso!");
         } catch (CarroJaVendidoException e) {
-            System.out.println("\nERRO: " + e.getMessage());
+            System.out.println("\n❌ ERRO: " + e.getMessage());
         } catch (EstoqueInsuficienteException e) {
-            System.out.println("\nERRO: " + e.getMessage());
+            System.out.println("\n❌ ERRO: " + e.getMessage());
             System.out.println("Carros disponíveis: " + e.getCarrosDisponiveis());
         }
     }
@@ -55,7 +55,7 @@ public class ControleVenda {
         int contador = 0;
         for (Carro c : concessionaria.getCarros()) {
             if (!c.isVendido()) {
-                exibirDetalhes(c);
+                exibirDetalhesFormatado(c);
                 System.out.println("----------------------");
                 contador++;
             }
@@ -115,7 +115,7 @@ public class ControleVenda {
         System.out.println("Nome: " + cliente.getNome());
         System.out.println("CPF: " + cliente.getCpf());
         System.out.println("Telefone: " + cliente.getTelefone());
-        System.out.println("Endereço: " + cliente.getEndereco().getRua() + ", " + 
+        System.out.println("Endereço: " + cliente.getEndereco().getRua() + ", " + //Reflexividade
                           cliente.getEndereco().getNumero() + " - " + //Reflexividade
                           cliente.getEndereco().getCidade() + ", " + cliente.getEndereco().getEstado()); //Reflexividade
         System.out.println("Cliente Premium: " + (cliente.isClientePremium() ? "Sim" : "Não"));
@@ -126,22 +126,45 @@ public class ControleVenda {
         System.out.println("Nome: " + vendedor.getNome());
         System.out.println("CPF: " + vendedor.getCpf());
         System.out.println("Telefone: " + vendedor.getTelefone());
-        System.out.println("Endereço: " + vendedor.getEndereco().getRua() + ", " + 
+        System.out.println("Endereço: " + vendedor.getEndereco().getRua() + ", " + //Reflexividade
                           vendedor.getEndereco().getNumero() + " - " + //Reflexividade
                           vendedor.getEndereco().getCidade() + ", " + vendedor.getEndereco().getEstado()); //Reflexividade
         System.out.println("Comissão: " + (vendedor.getComissao() * 100) + "%");
         System.out.println("Vendas Realizadas: " + vendedor.getVendasRealizadas());
     }
 
-    private void exibirDetalhes(Carro carro) {
-        System.out.println(carro.obterDetalhes());
+    private void exibirDetalhesFormatado(Carro carro) {
+        System.out.println("Modelo: " + carro.getModelo());
+        System.out.println("Marca: " + carro.getMarca());
+        System.out.println("Ano: " + carro.getAno());
+        System.out.println("Preço Base: R$" + carro.getPrecoBase());
+        System.out.println("Placa: " + carro.getPlaca());
+        System.out.println("Status: " + (carro.isVendido() ? "Vendido" : "Disponível"));
+        
+        if (carro instanceof CarroEsportivo) {
+            CarroEsportivo ce = (CarroEsportivo) carro;
+            System.out.println("Tipo: Esportivo");
+            System.out.println("Velocidade Máxima: " + ce.getVelocidadeMaxima() + " km/h");
+            System.out.println("Turbo: " + (ce.isTurbo() ? "Sim" : "Não"));
+        } else if (carro instanceof CarroLuxo) {
+            CarroLuxo cl = (CarroLuxo) carro;
+            System.out.println("Tipo: Luxo");
+            System.out.println("Revestimento em Couro: " + (cl.isTemRevestimentoCouro() ? "Sim" : "Não"));
+            System.out.println("Sistema de Som Premium: " + (cl.isTemSistemaSomPremium() ? "Sim" : "Não"));
+        } else if (carro instanceof CarroEletrico) {
+            CarroEletrico cel = (CarroEletrico) carro;
+            System.out.println("Tipo: Elétrico");
+            System.out.println("Autonomia: " + cel.getAutonomia() + " km");
+            System.out.println("Tempo de Recarga: " + cel.getTempoRecarga() + " horas");
+        }
+        System.out.println("Preço de Venda: R$" + carro.calcularPrecoVenda());
     }
 
     private void exibirRecibo(Venda venda) {
         System.out.println("\n=== RECIBO DE VENDA ===");
         System.out.println("Data: " + venda.getDataVenda());
         System.out.println("\nDados do Carro:");
-        System.out.println(venda.getCarro().obterDetalhes());
+        exibirDetalhesFormatado(venda.getCarro());
         System.out.println("\nDados do Cliente:");
         exibirInformacoesCliente(venda.getCliente());
         System.out.println("\nDados do Vendedor:");

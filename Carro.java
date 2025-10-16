@@ -20,18 +20,8 @@ public abstract class Carro implements Vendavel {
     public abstract double calcularPrecoVenda();
 
     //Sobrescrita
+    @Override
     public void exibirDetalhes() {
-    }
-
-    public String obterDetalhes() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Modelo: ").append(modelo).append("\n");
-        sb.append("Marca: ").append(marca).append("\n");
-        sb.append("Ano: ").append(ano).append("\n");
-        sb.append("Preço Base: R$").append(precoBase).append("\n");
-        sb.append("Placa: ").append(placa).append("\n");
-        sb.append("Status: ").append(vendido ? "Vendido" : "Disponível");
-        return sb.toString();
     }
 
     public void vender() throws CarroJaVendidoException {

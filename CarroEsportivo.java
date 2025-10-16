@@ -41,14 +41,4 @@ public class CarroEsportivo extends Carro {
     @Override
     public void exibirDetalhes() {
     }
-
-    public String obterDetalhes() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(super.obterDetalhes()).append("\n");
-        sb.append("Tipo: Esportivo\n");
-        sb.append("Velocidade Máxima: ").append(velocidadeMaxima).append(" km/h\n");
-        sb.append("Turbo: ").append(turbo ? "Sim" : "Não").append("\n");
-        sb.append("Preço de Venda: R$").append(calcularPrecoVenda());
-        return sb.toString();
-    }
 }
