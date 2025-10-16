@@ -56,9 +56,6 @@ public class Principal {
                         menuRelatorios();
                         break;
                     case 4:
-                        concessionaria.demonstrarReflexividade();
-                        break;
-                    case 5:
                         System.out.println("\nAté logo!");
                         continuar = false;
                         break;
