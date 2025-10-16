@@ -56,6 +56,4 @@ public abstract class Pessoa {
     public Endereco getEndereco() { //Reflexividade
         return endereco;
     }
-
-    public abstract void exibirInformacoes();
 }
