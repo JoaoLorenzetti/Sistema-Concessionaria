@@ -29,11 +29,11 @@ public class ControleVenda {
         
         try {
             concessionaria.realizarVenda(placa, cpfCliente, idVendedor, formaPagamento, desconto);
-            System.out.println("\n✅ Venda realizada com sucesso!");
+            System.out.println("\nVenda realizada com sucesso!");
         } catch (CarroJaVendidoException e) {
-            System.out.println("\n❌ ERRO: " + e.getMessage());
+            System.out.println("\nERRO: " + e.getMessage());
         } catch (EstoqueInsuficienteException e) {
-            System.out.println("\n❌ ERRO: " + e.getMessage());
+            System.out.println("\nERRO: " + e.getMessage());
             System.out.println("Carros disponíveis: " + e.getCarrosDisponiveis());
         }
     }
