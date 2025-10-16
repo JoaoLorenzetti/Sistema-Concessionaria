@@ -40,10 +40,15 @@ public class CarroEsportivo extends Carro {
     //Sobrescrita
     @Override
     public void exibirDetalhes() {
-        super.exibirDetalhes();
-        System.out.println("Tipo: Esportivo");
-        System.out.println("Velocidade Máxima: " + velocidadeMaxima + " km/h");
-        System.out.println("Turbo: " + (turbo ? "Sim" : "Não"));
-        System.out.println("Preço de Venda: R$" + calcularPrecoVenda());
+    }
+
+    public String obterDetalhes() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.obterDetalhes()).append("\n");
+        sb.append("Tipo: Esportivo\n");
+        sb.append("Velocidade Máxima: ").append(velocidadeMaxima).append(" km/h\n");
+        sb.append("Turbo: ").append(turbo ? "Sim" : "Não").append("\n");
+        sb.append("Preço de Venda: R$").append(calcularPrecoVenda());
+        return sb.toString();
     }
 }

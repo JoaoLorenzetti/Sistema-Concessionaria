@@ -45,26 +45,11 @@ public class Vendedor extends Pessoa {
         return vendasRealizadas;
     }
 
-    public void registrarVenda(double valorVenda) {
-        vendasRealizadas++;
-        System.out.println("Venda registrada para " + getNome() + ". Comissão: R$" + (valorVenda * comissao));
-    }
-
     public void incrementarVendasRealizadas() {
         this.vendasRealizadas++;
     }
 
-    //Sobrescrita
-    @Override
-    public void exibirInformacoes() {
-        System.out.println("\n--- Informações do Vendedor ---");
-        System.out.println("ID: " + idVendedor);
-        System.out.println("Nome: " + getNome());
-        System.out.println("CPF: " + getCpf());
-        System.out.println("Telefone: " + getTelefone());
-        System.out.println("Endereço: ");
-        getEndereco().exibirEndereco(); //Reflexividade
-        System.out.println("Comissão: " + (comissao * 100) + "%");
-        System.out.println("Vendas Realizadas: " + vendasRealizadas);
+    public void registrarVenda(double valorVenda) {
+        vendasRealizadas++;
     }
 }

@@ -69,8 +69,4 @@ public class Endereco {
     public String getCep() {
         return cep;
     }
-
-    public void exibirEndereco() {
-        System.out.println(rua + ", " + numero + " - " + cidade + ", " + estado + " - " + cep);
-    }
 }

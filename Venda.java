@@ -77,18 +77,4 @@ public class Venda {
     public String getFormaPagamento() {
         return formaPagamento;
     }
-
-    public void exibirRecibo() {
-        System.out.println("\n=== RECIBO DE VENDA ===");
-        System.out.println("Data: " + dataVenda);
-        System.out.println("\nDados do Carro:");
-        carro.exibirDetalhes();
-        System.out.println("\nDados do Cliente:");
-        cliente.exibirInformacoes();
-        System.out.println("\nDados do Vendedor:");
-        vendedor.exibirInformacoes();
-        System.out.println("\nValor Final: R$" + valorFinal);
-        System.out.println("Forma de Pagamento: " + formaPagamento);
-        System.out.println("=======================");
-    }
 }

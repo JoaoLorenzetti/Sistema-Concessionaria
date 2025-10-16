@@ -60,17 +60,14 @@ public class Concessionaria {
 
     public void cadastrarCarro(Carro carro) {
         carros.add(carro);
-        System.out.println("Carro cadastrado com sucesso!");
     }
 
     public void cadastrarVendedor(Vendedor vendedor) {
         vendedores.add(vendedor);
-        System.out.println("Vendedor cadastrado com sucesso!");
     }
 
     public void cadastrarCliente(Cliente cliente) {
         clientes.add(cliente);
-        System.out.println("Cliente cadastrado com sucesso!");
     }
 
     public void realizarVenda(String placaCarro, String cpfCliente, int idVendedor, 
@@ -102,7 +99,6 @@ public class Concessionaria {
 
         carro.vender(desconto);
         vendedor.registrarVenda(valorFinal);
-        venda.exibirRecibo();
     }
 
     private Carro buscarCarroPorPlaca(String placa) {
@@ -141,43 +137,4 @@ public class Concessionaria {
         }
         return contador;
     }
-
-    public void listarVendedores() {
-        System.out.println("\n--- Vendedores da Concessionária ---");
-        for (Vendedor v : vendedores) {
-            v.exibirInformacoes();
-            System.out.println("----------------------");
-        }
-    }
-
-    public void listarClientes() {
-        System.out.println("\n--- Clientes da Concessionária ---");
-        for (Cliente c : clientes) {
-            c.exibirInformacoes();
-            System.out.println("----------------------");
-        }
-    }
-
-    public void listarVendas() {
-        System.out.println("\n--- Histórico de Vendas ---");
-        for (Venda v : vendas) {
-            v.exibirRecibo();
-        }
-    }
-
-    public void listarCarrosDisponiveis() {
-        System.out.println("\n--- Carros Disponíveis ---");
-        int contador = 0;
-        for (Carro c : carros) {
-            if (!c.isVendido()) {
-                c.exibirDetalhes();
-                System.out.println("----------------------");
-                contador++;
-            }
-        }
-        if (contador == 0) {
-            System.out.println("Nenhum carro disponível!");
-        }
-    }
-
 }

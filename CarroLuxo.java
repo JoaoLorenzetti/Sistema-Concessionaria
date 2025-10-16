@@ -42,10 +42,15 @@ public class CarroLuxo extends Carro {
     //Sobrescrita
     @Override
     public void exibirDetalhes() {
-        super.exibirDetalhes();
-        System.out.println("Tipo: Luxo");
-        System.out.println("Revestimento em Couro: " + (temRevestimentoCouro ? "Sim" : "Não"));
-        System.out.println("Sistema de Som Premium: " + (temSistemaSomPremium ? "Sim" : "Não"));
-        System.out.println("Preço de Venda: R$" + calcularPrecoVenda());
+    }
+
+    public String obterDetalhes() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.obterDetalhes()).append("\n");
+        sb.append("Tipo: Luxo\n");
+        sb.append("Revestimento em Couro: ").append(temRevestimentoCouro ? "Sim" : "Não").append("\n");
+        sb.append("Sistema de Som Premium: ").append(temSistemaSomPremium ? "Sim" : "Não").append("\n");
+        sb.append("Preço de Venda: R$").append(calcularPrecoVenda());
+        return sb.toString();
     }
 }

@@ -45,10 +45,15 @@ public class CarroEletrico extends Carro {
     //Sobrescrita
     @Override
     public void exibirDetalhes() {
-        super.exibirDetalhes();
-        System.out.println("Tipo: Elétrico");
-        System.out.println("Autonomia: " + autonomia + " km");
-        System.out.println("Tempo de Recarga: " + tempoRecarga + " horas");
-        System.out.println("Preço de Venda: R$" + calcularPrecoVenda());
+    }
+
+    public String obterDetalhes() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.obterDetalhes()).append("\n");
+        sb.append("Tipo: Elétrico\n");
+        sb.append("Autonomia: ").append(autonomia).append(" km\n");
+        sb.append("Tempo de Recarga: ").append(tempoRecarga).append(" horas\n");
+        sb.append("Preço de Venda: R$").append(calcularPrecoVenda());
+        return sb.toString();
     }
 }

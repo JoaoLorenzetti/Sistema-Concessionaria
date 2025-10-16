@@ -19,13 +19,19 @@ public abstract class Carro implements Vendavel {
 
     public abstract double calcularPrecoVenda();
 
+    //Sobrescrita
     public void exibirDetalhes() {
-        System.out.println("Modelo: " + modelo);
-        System.out.println("Marca: " + marca);
-        System.out.println("Ano: " + ano);
-        System.out.println("Preço Base: R$" + precoBase);
-        System.out.println("Placa: " + placa);
-        System.out.println("Status: " + (vendido ? "Vendido" : "Disponível"));
+    }
+
+    public String obterDetalhes() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Modelo: ").append(modelo).append("\n");
+        sb.append("Marca: ").append(marca).append("\n");
+        sb.append("Ano: ").append(ano).append("\n");
+        sb.append("Preço Base: R$").append(precoBase).append("\n");
+        sb.append("Placa: ").append(placa).append("\n");
+        sb.append("Status: ").append(vendido ? "Vendido" : "Disponível");
+        return sb.toString();
     }
 
     public void vender() throws CarroJaVendidoException {
@@ -33,7 +39,6 @@ public abstract class Carro implements Vendavel {
             throw new CarroJaVendidoException("Erro: Este carro já foi vendido!");
         }
         this.vendido = true;
-        System.out.println("Carro vendido com sucesso!");
     }
 
     //Sobrecarga
@@ -42,7 +47,6 @@ public abstract class Carro implements Vendavel {
             throw new CarroJaVendidoException("Erro: Este carro já foi vendido!");
         }
         this.vendido = true;
-        System.out.println("Carro vendido com desconto de R$" + desconto + "!");
     }
 
     public void setModelo(String modelo) {
