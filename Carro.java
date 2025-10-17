@@ -9,12 +9,12 @@ public abstract class Carro implements Vendavel {
     private boolean vendido;
 
     public Carro() {
-        this.modelo = "";
-        this.marca = "";
-        this.ano = 0;
-        this.precoBase = 0;
-        this.placa = "";
-        this.vendido = false;
+        modelo = "";
+        marca = "";
+        ano = 0;
+        precoBase = 0;
+        placa = "";
+        vendido = false;
     }
 
     public abstract double calcularPrecoVenda();

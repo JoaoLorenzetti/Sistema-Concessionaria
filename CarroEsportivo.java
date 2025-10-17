@@ -6,8 +6,8 @@ public class CarroEsportivo extends Carro {
 
     public CarroEsportivo() {
         super();
-        this.velocidadeMaxima = 0;
-        this.turbo = false;
+        velocidadeMaxima = 0;
+        turbo = false;
     }
 
     public void setVelocidadeMaxima(double velocidadeMaxima) {

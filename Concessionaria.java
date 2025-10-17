@@ -12,12 +12,12 @@ public class Concessionaria {
     private List<Venda> vendas;
 
     public Concessionaria() {
-        this.nome = "";
-        this.endereco = "";
-        this.carros = new ArrayList<>();
-        this.vendedores = new ArrayList<>();
-        this.clientes = new ArrayList<>();
-        this.vendas = new ArrayList<>();
+        nome = "";
+        endereco = "";
+        carros = new ArrayList<>();
+        vendedores = new ArrayList<>();
+        clientes = new ArrayList<>();
+        vendas = new ArrayList<>();
     }
 
     public void setNome(String nome) {

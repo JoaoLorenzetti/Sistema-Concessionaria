@@ -5,7 +5,7 @@ public class Cliente extends Pessoa {
 
     public Cliente() {
         super();
-        this.clientePremium = false;
+        clientePremium = false;
     }
 
     public void setClientePremium(boolean clientePremium) {

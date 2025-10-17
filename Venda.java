@@ -11,12 +11,12 @@ public class Venda {
     private String formaPagamento;
 
     public Venda() {
-        this.carro = null;
-        this.cliente = null;
-        this.vendedor = null;
-        this.dataVenda = LocalDate.now();
-        this.valorFinal = 0;
-        this.formaPagamento = "";
+        carro = null;
+        cliente = null;
+        vendedor = null;
+        dataVenda = LocalDate.now();
+        valorFinal = 0;
+        formaPagamento = "";
     }
 
     public void setCarro(Carro carro) {

@@ -6,8 +6,8 @@ public class CarroEletrico extends Carro {
 
     public CarroEletrico() {
         super();
-        this.autonomia = 0;
-        this.tempoRecarga = 0;
+        autonomia = 0;
+        tempoRecarga = 0;
     }
 
     public void setAutonomia(int autonomia) {

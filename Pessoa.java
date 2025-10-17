@@ -7,10 +7,10 @@ public abstract class Pessoa {
     private Endereco endereco; //Reflexividade
 
     public Pessoa() {
-        this.nome = "";
-        this.cpf = "";
-        this.telefone = "";
-        this.endereco = new Endereco();
+        nome = "";
+        cpf = "";
+        telefone = "";
+        endereco = new Endereco();
     }
 
     public void setNome(String nome) {

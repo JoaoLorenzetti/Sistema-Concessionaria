@@ -7,9 +7,9 @@ public class Vendedor extends Pessoa {
 
     public Vendedor() {
         super();
-        this.idVendedor = 0;
-        this.comissao = 0;
-        this.vendasRealizadas = 0;
+        idVendedor = 0;
+        comissao = 0;
+        vendasRealizadas = 0;
     }
 
     public void setIdVendedor(int idVendedor) {

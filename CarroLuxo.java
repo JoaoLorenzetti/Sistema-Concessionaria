@@ -6,8 +6,8 @@ public class CarroLuxo extends Carro {
 
     public CarroLuxo() {
         super();
-        this.temRevestimentoCouro = false;
-        this.temSistemaSomPremium = false;
+        temRevestimentoCouro = false;
+        temSistemaSomPremium = false;
     }
 
     public void setTemRevestimentoCouro(boolean temRevestimentoCouro) {
